@@ -21,7 +21,7 @@ public class guess {
 	public static void init() {
 		N = in.nextInt();
 		a = new ArrayList[N];
-		max = 0;
+		max = 1;
 		for(int i = 0; i < N; i++) {
 			a[i] = new ArrayList<String>();
 			in.next();
