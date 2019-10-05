@@ -21,7 +21,7 @@ public class guess {
 	public static void init() {
 		N = in.nextInt();
 		a = new ArrayList[N];
-		max = 1;
+		max = 0;
 		for(int i = 0; i < N; i++) {
 			a[i] = new ArrayList<String>();
 			in.next();
@@ -33,7 +33,7 @@ public class guess {
 	}
 	
 	public static void solve() {
-		int same = 0;
+		int same = 1;
 		for(int i = 0; i < N - 1; i++) {
 			for(int j = i + 1; j < N; j++) {
 				for(String p : a[i]) {
