@@ -41,11 +41,12 @@ public class guess {
 						same++;
 					}
 				}
+				max = Math.max(max, same);
+				same = 0;
 			}
-			max = Math.max(max, same);
-			same = 0;
+			
 		}
-		out.println(max);
+		out.println(max + 1);
 		out.close();
 	}
 }
