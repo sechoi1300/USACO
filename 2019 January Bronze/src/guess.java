@@ -33,19 +33,19 @@ public class guess {
 	}
 	
 	public static void solve() {
-		int same = 1;
+		int same = 0;
 		for(int i = 0; i < N - 1; i++) {
-			for(int j = 0; j < N; j++) {
+			for(int j = i + 1; j < N; j++) {
 				for(String p : a[i]) {
 					if(a[j].contains(p)) {
 						same++;
 					}
 				}
-				max = Math.max(max, same);
-				same = 0;
 			}
+			max = Math.max(max, same);
+			same = 0;
 		}
-		out.println(max - 1);
+		out.println(max);
 		out.close();
 	}
 }
