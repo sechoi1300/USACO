@@ -21,9 +21,6 @@ public class backforth {
 		a = in.nextLine().split(" ");
 		b = in.nextLine().split(" ");
 		
-		int t1 = 1000;
-		int t2 = 1000;
-		
 		String[] a1 = new String[10];
 		String[] b1 = new String[10];
 		a1 = a.clone();
