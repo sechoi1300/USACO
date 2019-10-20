@@ -7,7 +7,8 @@ public class blocks {
 	static PrintWriter out;
 	static int N;
 	static String[] words;
-	static ArrayList<Character> a = new ArrayList<Character>();
+	static ArrayList<Character> letters = new ArrayList<Character>();
+	static int[] num = new int[26];
 	
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
@@ -30,13 +31,17 @@ public class blocks {
 		for(int i = 0; i < N * 2; i++) {
 			char[] temp = words[i].toCharArray();
 			for(int j = 0; j < temp.length; j++) {
-				a.add(temp[j]);
+				letters.add(temp[j]);
 			}
+		}
+		Collections.sort(letters);
+		for(int i = 0; i < 26; i++) {
+			num[i] = 
 		}
 	}
 
 	public static void solve() {
-		
+		out.println(letters);
 	}
 	
 }
