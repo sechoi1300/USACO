@@ -36,7 +36,7 @@ public class blocks {
 		}
 		Collections.sort(letters);
 		for(int i = 0; i < 26; i++) {
-			num[i] = 
+			
 		}
 	}
 
