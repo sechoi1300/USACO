@@ -5,9 +5,8 @@ public class notlast {
 	
 	static Scanner in;
 	static PrintWriter out;
-	static int N;
-	static ArrayList<String> cows;
-	static ArrayList<Integer> milk;
+	static int N, min;
+	static Map<String, Integer> a = new HashMap<String, Integer>();
 	
 	public static void main(String[] args) throws IOException{
 		// TODO Auto-generated method stub
@@ -23,15 +22,23 @@ public class notlast {
 	
 	public static void init() {
 		N = in.nextInt();
-		cows = new ArrayList<String>();
-		milk = new ArrayList<Integer>();
 		for(int i = 0; i < N; i++) {
-			for(int j = 0; j < cows.size(); j)
+			String cowtemp = in.next();
+			int milktemp = in.nextInt();
+			a.put(cowtemp, milktemp);
 		}
+		min = 100;
 	}
 	
 	public static void solve() {
-		
+		for(String name:a.keySet()) {
+			min = Math.min(min, a.get(name));
+		}
+		//a.get(min) = 100;
+		for(String name:a.keySet()) {
+			min = Math.min(min, a.get(name));
+		}
+		//out.println();
 	}
 	
 }
