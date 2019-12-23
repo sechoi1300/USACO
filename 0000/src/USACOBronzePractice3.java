@@ -23,7 +23,9 @@ public class USACOBronzePractice3 {
 		
 	}
 	
+	
 	public static void solve() {
+		/*
 		int count =1;
         for(int i =0; i < hayley.length(); i++) {
 
@@ -38,6 +40,7 @@ public class USACOBronzePractice3 {
             list.add(temp);
 
         }
+        */
 	}
 	
 }
