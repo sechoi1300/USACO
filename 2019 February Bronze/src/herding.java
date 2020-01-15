@@ -15,6 +15,9 @@ public class herding {
 		
 		init();
 		solve();
+		
+		in.close();
+		out.close();
 	}
 	
 	public static void init() {
@@ -23,15 +26,14 @@ public class herding {
 			input[i] = in.nextInt();
 		}
 		Arrays.sort(input);
-		min = 2;
 	}
 	
 	public static void solve() {
 		if(input[0] == input[1] - 1 && input[1] == input[2] - 1) min = 0;
-		if(input[0] == input[1] - 2 || input[1] == input[2]  - 2) min = 1;
-		System.out.println(min);
+		else if(input[0] == input[1] - 2 || input[1] == input[2]  - 2) min = 1;
+      	else min = 2;
 		max = (Math.max(input[2] - input[1], input[1] - input[0])) - 1;
-		System.out.println(max);
+		out.print(min + "\n" + max);
 	}
 
 }
