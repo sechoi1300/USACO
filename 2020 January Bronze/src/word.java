@@ -32,34 +32,19 @@ public class word {
 	}
 	
 	public static void solve() {
-		/*
-		length = str.length();
-		for(int i = 0; i < N; i++) {
-			if(length + words[i].length() > K) {
-				str = str + "\n" + words[i];
-				length = words[i].length();
-			} else {
-				str = str + " " + words[i];
-				length = str.length();
-			}
-		}
-		System.out.println(str.substring(1, str.length()));
-		*/
-		str = words[0];
-        result = "";
+		length = words[0].length();
+        String result = words[0];
 		for(int i = 1; i < N; i++) {
-            
-            if(str.length() + words[i].length() > K) {
-              result +=str+"\n";
-              str= words[i];
-            }
-          
+			length += words[i].length();
+            if(length <= K) {
+            	result += " "+words[i];                  
+            }          
             else {
-              str += " "+words[i];
-            }
-            			
+              result +="\n"+words[i];
+              length=words[i].length();
+            }             
 		}
-		out.print(result + words[N - 1]);
+		out.println(result);
 	}
 	
 }
