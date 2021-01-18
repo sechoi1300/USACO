@@ -7,7 +7,7 @@ public class word {
   	static PrintWriter out;
   	static int N, K, length;
   	static String[] words;
-  	static String str, result;
+  	static String result;
 	
 	public static void main(String[] args) throws IOException{
 		// TODO Auto-generated method stub
@@ -28,7 +28,6 @@ public class word {
 		for(int i = 0; i < N; i++) {
 			words[i] = in.next();
 		}
-		str = "";
 	}
 	
 	public static void solve() {

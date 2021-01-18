@@ -7,9 +7,7 @@ public class photo {
 	static PrintWriter out;
 	static int N;
 	static int[] num;
-	static ArrayList<Integer> result;
-	static boolean containsZero, duplicates;
-	static TreeMap<Integer, Integer> m;
+	static LinkedHashSet<Integer> set = new LinkedHashSet<Integer>();
 	
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
@@ -25,47 +23,33 @@ public class photo {
 	
 	public static void init() {
 		N = in.nextInt();
-		result = new ArrayList<Integer>();
         num = new int[N - 1];
-        for(int i = 0; i < N - 1; i++)
+        for(int i = 0; i < N - 1; i++) {
           num[i] = in.nextInt();
-      
-        m = new TreeMap<Integer, Integer>();
-      
-        for(int i = 1; i < num[0]; i++){
-          if(i != num[0] - i)
-             m.put(i, num[0] - i);
-        }
-		containsZero = false;
-		duplicates = false;
+		}
+		//System.out.println(Arrays.toString(num));
 	}
 	
 	public static void solve() {
-		for(int a: m.keySet()) {
-			int b = m.get(a);
-	          
-			result.add(a);
-			result.add(b);
-	        for(int i = 1; i < num.length; i++){
-	        	
-	        	int t = num[i] - result.get(result.size() - 1);  
-	        	if(t > 0 && t <= N && !result.contains(t)) result.add(t);
-	            else {
-	            	result = new ArrayList<Integer>();
-	            	break;
-	            }
-
-	    		
-	        }
-	        
-	        if(result.size()==N) break;      
-	          
-	    }
-		String str = result.get(0) + "";
-		for(int i = 1; i < result.size(); i++) {
-			str += " " + result.get(i);
+		int[] result = new int[N + 1];
+		int temp = 1;
+		while(true) {
+			result[0] = temp;
+			set.add(temp);
+			for(int i = 0; i < N - 1; i++) {
+				temp = num[i]- temp;
+				set.add(temp);
+				result[i + 1] = temp;
+			}
+			if(set.size() == N) break;
+			temp++;
+			set.clear();
 		}
-		out.println(str);
+		String str = "";
+		for(int i = 0; i < N; i++) {
+			str+=" " + result[i];
+		}
+		out.println(str.substring(1));
 	}
 
 }

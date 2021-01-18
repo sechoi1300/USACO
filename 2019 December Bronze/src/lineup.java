@@ -3,7 +3,8 @@ import java.io.*;
 
 public class lineup {
 	
-	static Scanner in;
+	static BufferedReader in;
+	static StringTokenizer st;
 	static PrintWriter out;
 	static int N;
 	static Map<String, Integer> cowsToNum = new HashMap<String, Integer>();
@@ -13,7 +14,7 @@ public class lineup {
 	
 	public static void main(String[] args) throws IOException{
 		// TODO Auto-generated method stub
-		in = new Scanner(new File("lineup.in"));
+		in = new BufferedReader(new FileReader("lineup.in"));
 		out = new PrintWriter(new File("lineup.out"));
 		
 		init();
@@ -24,6 +25,9 @@ public class lineup {
 	}
 	
 	public static void init() {
+		N = Integer.parseInt(st.nextToken());
+		
+		/*
 		cowsToNum.put("Beatrice", 0);
 		cowsToNum.put("Belinda", 1);
 		cowsToNum.put("Bella", 2);
